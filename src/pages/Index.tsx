@@ -46,17 +46,24 @@ const Index = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const hotmartScript = document.createElement("script");
-    hotmartScript.src = "https://checkout.hotmart.com/lib/hotmart-checkout-elements.js";
-    hotmartScript.async = true;
-    hotmartScript.onload = () => {
-      if ((window as any).checkoutElements) {
-        (window as any).checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
-      }
-    };
-    document.head.appendChild(hotmartScript);
-  }, []);
+{/* ✅ BLOQUE DE COMPRA — SUSTITUYE EL SNIPPET DE HOTMART */}
+<div className="mt-8 space-y-4">
+  <a
+    href="SEU_LINK_AQUI"
+    className="block w-full rounded-xl bg-yellow-400 px-6 py-4 text-center text-lg font-bold text-black shadow-lg transition-all hover:scale-[1.02] hover:bg-yellow-300 active:scale-[0.98]"
+  >
+    ¡SÍ! QUIERO EL PROTOCOLO POR SOLO $ 27
+  </a>
+
+  <div className="mt-6 text-center">
+    <a
+      href="/downsell"
+      className="text-muted-foreground text-sm underline hover:text-warning transition-colors"
+    >
+      No, gracias. Prefiero seguir intentándolo solo y perder esta oportunidad.
+    </a>
+  </div>
+</div>
 
   // ✅ NOVO: Klarity Script para rastreamento de leads
   useEffect(() => {
