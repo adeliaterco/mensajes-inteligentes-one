@@ -9,19 +9,6 @@ const Downsell = () => {
   const scrollToOferta = () =>
     document.getElementById("oferta-downsell")?.scrollIntoView({ behavior: "smooth" });
 
-  // ADICIONAR AQUI O useEffect PARA HOTMART:
-  useEffect(() => {
-    const hotmartScript = document.createElement("script");
-    hotmartScript.src = "https://checkout.hotmart.com/lib/hotmart-checkout-elements.js";
-    hotmartScript.async = true;
-    hotmartScript.onload = () => {
-      if ((window as any).checkoutElements) {
-        (window as any).checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel-downsell');
-      }
-    };
-    document.head.appendChild(hotmartScript);
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground pb-20">
       <ExitIntentPopup onAccept={scrollToOferta} />
@@ -95,9 +82,22 @@ const Downsell = () => {
           <span className="text-gold font-bold">+1.500 hombres</span> a reconquistar a su ex.
         </p>
 
-        {/* REMOVER BOTÃO ANTIGO E INSERIR DIV HOTMART */}
-        <div className="mt-8 flex justify-center">
-          <div id="hotmart-sales-funnel-downsell"></div>
+        {/* ✅ BOTÃO DE COMPRA — SUBSTITUI O SNIPPET DA HOTMART */}
+        <div className="mt-8 flex flex-col items-center gap-6">
+          <a
+            href="SEU_LINK_AQUI"
+            className="block w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta text-center"
+          >
+            ¡SÍ! QUIERO EL PROTOCOLO POR SOLO $ 17
+          </a>
+          <div className="mt-4">
+            <Link
+              to="/"
+              className="text-muted-foreground text-sm underline hover:text-gold transition-colors"
+            >
+              No, prefiero rechazar esta oferta única para siempre
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -152,12 +152,12 @@ const Downsell = () => {
           Si sales ahora, esta página no volverá a aparecer. El precio regresa a $ 97.
         </p>
 
-        <button
-          onClick={scrollToOferta}
-          className="w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta"
+        <a
+          href="SEU_LINK_AQUI"
+          className="block w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta"
         >
           ¡SÍ! QUIERO EL PROTOCOLO POR SOLO $ 17
-        </button>
+        </a>
         <p className="text-muted-foreground text-sm mt-4">
           Compra 100% segura · Acceso inmediato · 30 días de garantía
         </p>
