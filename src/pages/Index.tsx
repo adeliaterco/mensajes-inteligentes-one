@@ -46,18 +46,6 @@ const Index = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const hotmartScript = document.createElement("script");
-    hotmartScript.src = "https://checkout.hotmart.com/lib/hotmart-checkout-elements.js";
-    hotmartScript.async = true;
-    hotmartScript.onload = () => {
-      if ((window as any).checkoutElements) {
-        (window as any).checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
-      }
-    };
-    document.head.appendChild(hotmartScript);
-  }, []);
-
   // ✅ NOVO: Klarity Script para rastreamento de leads
   useEffect(() => {
     const klarityScript = document.createElement('script');
@@ -83,29 +71,23 @@ const Index = () => {
         </div>
         <span className="text-xs text-muted-foreground hidden sm:inline">Acceso exclusivo · Post-compra</span>
       </header>
-
       {/* SECCIÓN 1 — HERO */}
       <section className="px-4 pt-10 md:pt-16 pb-12 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/40 mb-6 fade-in-up">
           <Lock className="w-4 h-4 text-gold" />
           <span className="text-sm text-gold font-semibold uppercase tracking-wider">NO CIERRES NI SALGAS DE ESTA PÁGINA</span>
         </div>
-
         <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-gold leading-[1.05] mb-6 fade-in-up">
           ¡Acaba de Dar el Primer Paso!
         </h1>
-
         <p className="text-xl md:text-3xl text-foreground font-semibold mb-5 fade-in-up">
           Ahora, 10 Minutos para Tener las <span className="text-gold">Palabras Exactas</span> y Recuperarla
         </p>
-
         <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up">
           El próximo mensaje puede cambiarlo todo, para bien o para mal. No dejes que la confusión te paralice. Tienes solo
           <span className="text-warning font-bold"> 10 minutos </span> para asegurar tu acceso.
         </p>
-
       </section>
-
       {/* SECCIÓN 2 — VIDEO CON VTURB */}
       <section className="px-4 py-12 max-w-4xl mx-auto">
         <h2 className="text-center font-display text-2xl md:text-4xl font-bold text-foreground mb-6">
@@ -119,17 +101,14 @@ const Index = () => {
           + 1.500 hombres ya usan nuestros scripts
         </p>
       </section>
-
       {/* SECCIÓN 3 — PROBLEMA */}
       <section className="px-4 py-16 max-w-4xl mx-auto">
         <SectionTitle className="text-center mb-6">
           El Error Fatal que Destruye el <span className="text-warning">73%</span> de las Reconquistas
         </SectionTitle>
-
         <p className="text-center text-lg md:text-xl text-foreground mb-10">
           ¿Estás emocionalmente exhausto por los <em>"vaivenes"</em> de ella?
         </p>
-
         <div className="bg-card border-2 border-gold/40 rounded-2xl p-6 md:p-10 shadow-gold">
           <ul className="space-y-4 text-base md:text-lg">
             {[
@@ -147,12 +126,10 @@ const Index = () => {
             ))}
           </ul>
         </div>
-
         <p className="text-center text-xl md:text-2xl font-bold text-gold mt-10">
           ¿Cuántas chances más estás dispuesto a perder?
         </p>
       </section>
-
       {/* SECCIÓN 4 — SOLUCIÓN */}
       <section className="px-4 py-16 max-w-6xl mx-auto">
         <SectionTitle className="text-center mb-4">
@@ -161,7 +138,6 @@ const Index = () => {
         <p className="text-center text-lg md:text-xl text-foreground mb-12">
           Sabrás exactamente <span className="text-gold font-semibold">qué enviar</span>, <span className="text-gold font-semibold">cuándo enviarlo</span> y <span className="text-gold font-semibold">cómo enviarlo</span>
         </p>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
             { icon: MessageSquare, title: "PAQUETE 1: Scripts de Reacercamiento", desc: "Mensajes para romper el hielo sin parecer desesperado" },
@@ -181,18 +157,15 @@ const Index = () => {
             </div>
           ))}
         </div>
-
         <p className="text-center text-lg md:text-xl text-foreground font-semibold mt-10">
           Cada paquete contiene scripts <span className="text-gold">LISTOS PARA COPIAR Y USAR</span>
         </p>
       </section>
-
       {/* SECCIÓN 5 — PRUEBA SOCIAL */}
       <section className="px-4 py-16 max-w-5xl mx-auto">
         <SectionTitle className="text-center mb-12">
           Hombres Como Tú Ya Lograron Resultados
         </SectionTitle>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {[
             { name: "GUSTAVO", time: "3 semanas", quote: "Revirtió de 'amigo' a 'cita programada'" },
@@ -208,27 +181,23 @@ const Index = () => {
             </div>
           ))}
         </div>
-
         <div className="text-center bg-card border border-gold/30 rounded-2xl p-8">
           <div className="font-display text-6xl md:text-7xl font-black text-gradient-gold mb-2">85%+</div>
           <p className="text-xl text-foreground font-semibold">Tasa de respuesta y engagement en conversaciones</p>
           <p className="text-muted-foreground mt-2">+1.500 hombres usando nuestros scripts</p>
         </div>
       </section>
-
       {/* SECCIÓN 6 — OFERTA + PRECIO */}
       <section id="oferta" className="px-4 py-16 max-w-4xl mx-auto">
         <SectionTitle className="text-center mb-10">
           Tu Inversión Hoy: Solo $ 27
         </SectionTitle>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div className="bg-secondary/50 border border-muted rounded-2xl p-6 text-center opacity-60">
             <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Valor normal</p>
             <p className="text-4xl font-bold text-muted-foreground line-through">$ 97</p>
             <p className="text-xs text-muted-foreground mt-2">Hora de especialista en psicología conductual</p>
           </div>
-
           <div className="relative gradient-gold rounded-2xl p-8 text-center shadow-glow scale-105">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-warning text-primary-foreground text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
               Exclusivo
@@ -238,7 +207,6 @@ const Index = () => {
             <p className="text-xs text-primary-foreground/80 mt-2">Solo para quien adquirió el método principal</p>
           </div>
         </div>
-
         <p className="text-center text-xl md:text-2xl font-bold text-foreground mt-10">
           Esta oferta exclusiva es válida por <span className="text-warning">10 MINUTOS</span>
         </p>
@@ -246,12 +214,24 @@ const Index = () => {
         <p className="text-center text-foreground mt-4 text-lg">
           Tú eliges: ¿Invertir <span className="text-gold font-bold">$ 27 ahora</span> o <span className="text-warning font-bold">$ 97 después</span>?
         </p>
-
-        <div className="mt-8 flex justify-center">
-          <div id="hotmart-sales-funnel"></div>
+        {/* ✅ BOTÃO DE COMPRA — SUBSTITUI O SNIPPET DA HOTMART */}
+        <div className="mt-8 flex flex-col items-center gap-6">
+          <a
+            href="SEU_LINK_AQUI"
+            className="block w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta text-center"
+          >
+            ¡SÍ! QUIERO EL PROTOCOLO POR SOLO $ 27
+          </a>
+          <div className="mt-4">
+            <a
+              href="/downsell"
+              className="text-muted-foreground text-sm underline hover:text-warning transition-colors"
+            >
+              No, gracias. Prefiero seguir intentándolo solo y perder esta oportunidad.
+            </a>
+          </div>
         </div>
       </section>
-
       {/* SECCIÓN 7 — BONOS */}
       <section className="px-4 py-16 max-w-5xl mx-auto">
         <SectionTitle className="text-center mb-3">
@@ -260,7 +240,6 @@ const Index = () => {
         <p className="text-center text-lg text-foreground mb-12">
           Valor total de estos bonos: <span className="text-gold font-bold">+$ 300</span>
         </p>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             { icon: FileText, title: 'Guía "Qué NUNCA Decir"', desc: "Frases y actitudes que destruyen la reconquista" },
@@ -278,18 +257,15 @@ const Index = () => {
             </div>
           ))}
         </div>
-
         <p className="text-center text-lg text-foreground mt-10">
           Todos los bonos son tuyos <span className="text-success font-bold">GRATIS</span> al adquirir hoy
         </p>
       </section>
-
       {/* SECCIÓN 8 — COMPARACIÓN */}
       <section className="px-4 py-16 max-w-5xl mx-auto">
         <SectionTitle className="text-center mb-10">
           Sin el Protocolo vs Con el Protocolo
         </SectionTitle>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="rounded-2xl p-8 border-2 border-danger/40" style={{ background: "rgba(239, 68, 68, 0.08)" }}>
             <h3 className="font-bold text-danger text-2xl mb-6 text-center">SIN el Protocolo</h3>
@@ -302,7 +278,6 @@ const Index = () => {
               ))}
             </ul>
           </div>
-
           <div className="rounded-2xl p-8 border-2 border-success/50" style={{ background: "rgba(74, 222, 128, 0.08)" }}>
             <h3 className="font-bold text-success text-2xl mb-6 text-center">CON el Protocolo</h3>
             <ul className="space-y-3">
@@ -316,11 +291,9 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       {/* SECCIÓN 9 — FAQ */}
       <section className="px-4 py-16 max-w-3xl mx-auto">
         <SectionTitle className="text-center mb-10">Preguntas Frecuentes</SectionTitle>
-
         <Accordion type="single" collapsible className="space-y-3">
           {[
             { q: "Mi caso es diferente, ¿funcionarán estos scripts?", a: "Sí. Los scripts están basados en psicología conductual y se adaptan a la mayoría de situaciones. Tendrás variaciones para cada escenario y aprenderás a personalizar el tono según el contexto." },
@@ -340,31 +313,26 @@ const Index = () => {
           ))}
         </Accordion>
       </section>
-
       {/* SECCIÓN 10 — GARANTÍA */}
       <section className="px-4 py-16 max-w-3xl mx-auto">
         <SectionTitle className="text-center mb-10">
           30 Días de Garantía 100% Libre de Riesgos
         </SectionTitle>
-
         <div className="bg-card border-2 border-success/50 rounded-2xl p-8 md:p-10 text-center">
           <div className="text-6xl mb-4">🛡️</div>
           <p className="text-foreground text-lg leading-relaxed mb-5">
             Prueba el Protocolo de Mensajes Inteligentes por <span className="text-success font-bold">30 días completos</span>.
             <br />Usa los scripts, aplica las estrategias.
           </p>
-
           <p className="text-muted-foreground mb-2">Si no sientes que te dio claridad para reconquistarla:</p>
           <ul className="text-foreground space-y-2 mb-6 inline-block text-left">
             <li>📧 Solo envía un email</li>
             <li>💰 Tu reembolso se procesa en 48 horas</li>
             <li>🎁 Los bonos son tuyos para siempre</li>
           </ul>
-
           <p className="text-gold text-xl font-bold">Sin preguntas, sin burocracia</p>
         </div>
       </section>
-
       {/* SECCIÓN 11 — URGENCIA FINAL */}
       <section className="px-4 py-16 max-w-3xl mx-auto text-center">
         <Clock className="w-12 h-12 text-warning mx-auto mb-4 animate-pulse" />
@@ -374,7 +342,6 @@ const Index = () => {
         <p className="text-foreground text-lg md:text-xl mb-8">
           Después de ese período, el precio vuelve a <span className="text-warning font-bold">$ 97</span>
         </p>
-
         <div className="mb-3">
           <div className="flex justify-between text-sm text-muted-foreground mb-2">
             <span>Vacantes disponibles</span>
@@ -384,37 +351,32 @@ const Index = () => {
             <div className="h-full gradient-gold" style={{ width: `${(vagas / 50) * 100}%` }} />
           </div>
         </div>
-
         <p className="text-muted-foreground mt-8 text-base md:text-lg">
           Tu decisión es clara: invierte <span className="text-gold font-bold">$ 27 ahora</span> o arrepiéntete después
         </p>
-
         <div className="mt-8">
           <CountdownTimer />
         </div>
       </section>
-
       {/* SECCIÓN 12 — CTA FINAL */}
       <section className="px-4 py-16 max-w-3xl mx-auto text-center">
-        <button
-          onClick={scrollToOferta}
-          className="w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta"
+        <a
+          href="SEU_LINK_AQUI"
+          className="block w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta"
         >
           ¡SÍ! QUIERO EL PROTOCOLO POR SOLO $ 27
-        </button>
+        </a>
         <p className="text-muted-foreground text-sm mt-4">
           Compra 100% segura · Acceso inmediato · 30 días de garantía
         </p>
-
         <div className="mt-8">
-          <button
-            onClick={scrollToOferta}
+          <a
+            href="SEU_LINK_AQUI"
             className="text-gold border-2 border-gold rounded-xl px-8 py-3 font-semibold hover:bg-gold hover:text-primary-foreground transition-colors"
           >
             Sí, asegurar mi acceso ahora
-          </button>
+          </a>
         </div>
-
         <div className="mt-6">
           <a
             href="/downsell"
@@ -423,7 +385,6 @@ const Index = () => {
             No, gracias. Prefiero seguir intentándolo solo y perder esta oportunidad.
           </a>
         </div>
-
         <p className="text-muted-foreground text-xs mt-12">
           © Protocolo de Mensajes Inteligentes · Todos los derechos reservados
         </p>
