@@ -85,7 +85,7 @@ const Downsell = () => {
         {/* ✅ BOTÃO DE COMPRA — SUBSTITUI O SNIPPET DA HOTMART */}
         <div className="mt-8 flex flex-col items-center gap-6">
           <a
-            href="SEU_LINK_AQUI"
+            href="https://go.centerpag.com/PPU38CQAAAS?upsell=true"
             className="block w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta text-center"
           >
             ¡SÍ! QUIERO EL PROTOCOLO POR SOLO $ 17
@@ -153,7 +153,7 @@ const Downsell = () => {
         </p>
 
         <a
-          href="SEU_LINK_AQUI"
+          href="https://go.centerpag.com/PPU38CQAAAS?upsell=true"
           className="block w-full gradient-gold text-primary-foreground font-black text-lg md:text-2xl px-8 py-6 rounded-2xl shadow-gold hover:scale-[1.02] transition-transform bounce-cta"
         >
           ¡SÍ! QUIERO EL PROTOCOLO POR SOLO $ 17
